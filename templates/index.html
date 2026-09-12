@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulk Mail Sender</title>
+    <style>
+        body { font-family: Arial; background: #222; color: #eee; text-align: center; }
+        input, textarea { width: 80%; padding: 10px; margin: 5px; }
+        button { padding: 10px 20px; background: green; color: white; border: none; cursor: pointer; }
+        .status { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Bulk Mail Sender</h1>
+    <form method="POST">
+        <input type="text" name="sender_name" placeholder="Sender Name"><br>
+        <input type="email" name="gmail" placeholder="Your Gmail"><br>
+        <input type="password" name="app_password" placeholder="16-digit App Password"><br>
+        <input type="text" name="subject" placeholder="Email Subject"><br>
+        <textarea name="message" placeholder="Message Body (Plain Text)" rows="6"></textarea><br>
+        <textarea name="recipients" placeholder="Recipients (one per line)" rows="6"></textarea><br>
+        <button type="submit">Send All</button>
+    </form>
+    {% if status %}
+        <div class="status">{{ status }}</div>
+    {% endif %}
+</body>
+</html>
